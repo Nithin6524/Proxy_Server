@@ -8,7 +8,7 @@ const getWord = async (req, res) => {
         url: "https://mashape-community-urban-dictionary.p.rapidapi.com/define",
         params: { term: word },
         headers: {
-            "x-rapidapi-key": "2de6bb6c67msh82e11cab38d55d2p1fb399jsn703f43568794",
+            "x-rapidapi-key": WORD_API_KEY,
             "x-rapidapi-host":
                 "mashape-community-urban-dictionary.p.rapidapi.com",
         },
