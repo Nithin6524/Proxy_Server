@@ -5,7 +5,7 @@ const routes = require("./routes");
 const app = express();
 
 // ✅ Enable CORS
-app.use(cors());
+app.use(cors({ origin: "*" }));
 
 // ✅ Middleware
 app.use(express.json());
