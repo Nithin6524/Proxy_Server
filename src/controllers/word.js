@@ -1,21 +1,13 @@
 const axios = require("axios");
-const { WORD_API_KEY } = require("../utils/apiKeys");
 const getWord = async (req, res) => {
     const { word } = req.query;
     console.log(word);
-    const options = {
-        method: "GET",
-        url: "https://mashape-community-urban-dictionary.p.rapidapi.com/define",
-        params: { term: word },
-        headers: {
-            "x-rapidapi-key": WORD_API_KEY,
-            "x-rapidapi-host":
-                "mashape-community-urban-dictionary.p.rapidapi.com",
-        },
-    };
+   
 
     try {
-        const response = await axios.request(options);
+        const response = await axios.get(
+            `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+        );
         res.json(response.data);
     } catch (error) {
         console.error("Error fetching word data:", error);
